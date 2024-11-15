@@ -17,6 +17,10 @@
         path = ./golang/generic;
         description = "Generic Go development environment";
       };
+      java-dev = {
+        path = ./java/generic;
+        description = "Generic Java development environment";
+      };
     };
   };
 }
