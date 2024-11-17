@@ -11,9 +11,17 @@
   }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in {
+    packages.x86_64-linux.myModule = with pkgs;
+      buildGoModule rec {
+        pname = "my-module";
+        version = "0.0.1";
+        src = ./.;
+        vendorHash = null;
+      };
+    packages.x86_64-linux.default = self.packages.x86_64-linux.myModule;
     devShells.x86_64-linux.default = with pkgs;
       mkShellNoCC {
-        packages = with pkgs; [go gopls gotools golangci-lint golangci-lint-langserver];
+        packages = with pkgs; [go gopls gotools golangci-lint];
         shellHook = ''echo "Welcome to the generic Go development environment"'';
       };
   };
