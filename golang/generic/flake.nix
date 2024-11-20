@@ -11,14 +11,14 @@
   }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in {
-    packages.x86_64-linux.myModule = with pkgs;
+    packages.x86_64-linux.my-module = with pkgs;
       buildGoModule rec {
         pname = "my-module";
         version = "0.0.1";
         src = ./.;
         vendorHash = null;
       };
-    packages.x86_64-linux.default = self.packages.x86_64-linux.myModule;
+    packages.x86_64-linux.default = self.packages.x86_64-linux.my-module;
     devShells.x86_64-linux.default = with pkgs;
       mkShellNoCC {
         packages = with pkgs; [go gopls gotools golangci-lint];
