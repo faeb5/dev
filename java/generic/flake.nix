@@ -16,7 +16,7 @@
         buildInputs = with pkgs; [jdk maven];
         packages = with pkgs; [jdt-language-server lombok];
         JDTLS_HOME = "${jdt-language-server}/share/java/jdtls";
-        LOMBOK_HOME = "${lombok}/share/lombok";
+        LOMBOK_HOME = "${lombok}/share/java";
         shellHook = ''echo "Welcome to the generic Java development environment"'';
       };
   };
