@@ -14,8 +14,7 @@
     devShells.x86_64-linux.default = with pkgs;
       mkShellNoCC {
         buildInputs = with pkgs; [jdk maven];
-        packages = with pkgs; [jdt-language-server lombok];
-        JDTLS_HOME = "${jdt-language-server}/share/java/jdtls";
+        packages = with pkgs; [jdt-language-server lombok google-java-format];
         LOMBOK_HOME = "${lombok}/share/java";
         shellHook = ''echo "Welcome to the generic Java development environment"'';
       };
