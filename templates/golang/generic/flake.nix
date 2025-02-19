@@ -23,7 +23,8 @@
     packages.x86_64-linux.default = self.packages.x86_64-linux.my-module;
     devShells.x86_64-linux.default = with pkgs;
       mkShellNoCC {
-        packages = with pkgs; [go gopls gotools golangci-lint];
+        buildInputs = with pkgs; [go];
+        packages = with pkgs; [gopls gotools golangci-lint];
         shellHook = ''echo "Welcome to the generic Go development environment"'';
       };
   };
