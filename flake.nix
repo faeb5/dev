@@ -13,11 +13,11 @@
   in {
     formatter.x86_64-linux = pkgs.alejandra;
     templates = {
-      go-dev = {
+      go = {
         path = ./templates/golang/generic;
         description = "Generic Go development environment";
       };
-      java-dev = {
+      java = {
         path = ./templates/java/generic;
         description = "Generic Java development environment";
       };
