@@ -21,6 +21,10 @@
         path = ./templates/java/generic;
         description = "Generic Java development environment";
       };
+      lua = {
+        path = ./templates/lua/generic;
+        description = "Generic Lua development environment";
+      };
     };
   };
 }
